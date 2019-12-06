@@ -1,0 +1,78 @@
+const express= require('express');
+const app = express();
+var mongo= require('mongodb');
+
+app.get('/',(req,res)=>{
+	res.send('welcome to event_management_system');
+});
+app.get('/api/client',(req,res)=>{
+	var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+	MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("event_management_system");
+  dbo.collection("client").find({}).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+	res.send(result);
+	
+    db.close();
+  });
+  
+	});
+});
+app.put('/api/updateclient1',(req,res)=>{
+	var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://127.0.0.1:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("event_management_system");
+  var myquery = {eid:101 };
+  var newvalues = { $set: {audience: 60 } };
+  dbo.collection("client").updateOne(myquery, newvalues, function(err, result) {
+    if (err) throw err;
+    console.log("1 document updated");
+	res.send(result);
+    db.close();
+  });
+});
+	
+});
+app.post('/api/insert1',(req,res)=>{
+	var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://127.0.0.1:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+    var dbo = db.db("event_management_system");
+  var myobj = { eid: 110, "clientId" : 5, "ename" : "promotion party", "audience" : 70, "timePeriod" : 1, "eventDate" : { "day" : 2, "month" : "december", "year" : 2019 }, "venue" : "25 ebury rd"  };
+  dbo.collection("client").insertOne(myobj, function(err, result) {
+    if (err) throw err;
+    console.log("1 document inserted");
+	res.send(result);
+    db.close();
+  });
+});
+	
+});
+app.delete('/api/delete1',(req,res)=>{
+	var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://127.0.0.1:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+    var dbo = db.db("event_management_system");
+   var myquery = { eid:110 };
+  dbo.collection("client").deleteMany(myquery, function(err, obj) {
+    if (err) throw err;
+    console.log(obj.result.n + " document(s) deleted");
+	res.send(obj);
+    db.close();
+  });
+});
+	
+});
+
+const port= process.env.PORT||8081;
+app.listen(port,()=>console.log('listening to port ${port}...'));
