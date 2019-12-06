@@ -1,0 +1,17 @@
+app.post('/api/insert1',(req,res)=>{
+	var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://127.0.0.1:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+    var dbo = db.db("event_management_system");
+  var myobj = { eid: 110, "clientId" : 5, "ename" : "promotion party", "audience" : 70, "timePeriod" : 1, "eventDate" : { "day" : 2, "month" : "december", "year" : 2019 }, "venue" : "25 ebury rd"  };
+  dbo.collection("client").insertOne(myobj, function(err, result) {
+    if (err) throw err;
+    console.log("1 document inserted");
+	res.send(result);
+    db.close();
+  });
+});
+	
+});
