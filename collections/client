@@ -1,0 +1,8 @@
+{ "_id" : ObjectId("5d8e5bd25710ff3ad2311016"), "clientId" : "1", "clientName" : "manpreet", "contactNo" : "456789239", "address" : "113 coddler street bampton" }
+{ "_id" : ObjectId("5d8e5c7b5710ff3ad2311017"), "clientId" : "2", "clientName" : "rajdeep", "contactNo" : "78773676", "address" : "17 knightsbridge rd brampton" }
+{ "_id" : ObjectId("5d8e5cc15710ff3ad2311018"), "clientId" : "3", "clientName" : "simran", "contactNo" : "87766544534", "address" : "90 kingsrd brampton" }
+{ "_id" : ObjectId("5d8e5d025710ff3ad2311019"), "clientId" : "4", "clientName" : "harman", "contactNo" : "8977665594", "address" : "9 chingausy rd brampton" }
+{ "_id" : ObjectId("5d8e5d295710ff3ad231101a"), "clientId" : "5", "clientName" : "robert", "contactNo" : "8978665594", "address" : "90 chingausy rd brampton" }
+{ "_id" : ObjectId("5d8e5ddc5710ff3ad231101b"), "clientId" : "6", "clientName" : "rajdeep kaur chatha", "contactNo" : "7877367622", "address" : "27 knightsbridge rd brampton" }
+{ "_id" : ObjectId("5d8e5e025710ff3ad231101c"), "clientId" : "7", "clientName" : "robert", "contactNo" : "787730992", "address" : "27 knightsbridge  apt 902 rd brampton" }
+{ "_id" : ObjectId("5d8e5e815710ff3ad231101d"), "clientId" : "8", "clientName" : "jaspreet", "contactNo" : "709988792", "address" : "2 kingston toronto" }
