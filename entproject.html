@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body>
+<div align="center">
+Insert client data :
+
+<form action="http:/localhost:8081/insert" method="post"align="center">
+ <input type ="hidden" name ="_method" value="PUT">
+<div>
+<table align="center">
+<tr><td>
+<label for="clientId">client:</label></td><td>
+<input type="text" name="clientId"></input></td></tr>
+</div>
+<div><tr><td>
+<label for="clientName">client name:</label></td><td>
+<input type="text" name="clientName"></input></td></tr>
+</div>
+<div><tr><td>
+<label for="contactNo">phone:</label></td><td>
+<input type="text" name="contactNo"></input></td></tr>
+</div>
+<div><tr><td>
+<label for="address">address:</label></td><td>
+<input type="text" name="address"></input></td></tr>
+
+</div>
+<tr><td>
+<div class="button">
+<button type="insert">Insert</button></td></tr>
+</table>
+</div>
+
+</form>
+<div>
+
+<form action="http://localhost:8081/show" method="get" align="center">
+ <input type ="hidden" name ="_method" value="get">
+ <table align="center">
+<tr><td>
+<div class="button">
+<button type="show">show</button></td></tr>
+</table>
+</div>
+
+</form>
+<div>
+
+
+Update data :
+
+<form action="/update" method="post" align="center">
+<input type ="hidden" name ="_method" value="PUT">
+<div>
+<table align="center">
+<tr><td>
+<label for="client">client:</label></td><td>
+<input type="text" name="client"></input></td></tr>
+</div>
+<div>
+<tr><td>
+<label for="name">Name:</label></td><td>
+<input type="text" name="name"></input></td></tr>
+</div>
+<div>
+<tr><td>
+<label for="contact">contact:</label></td><td>
+<input type="text" name="contact"></input></td><tr>
+</div>
+<div>
+<tr><td>
+<label for="address">address:</label></td><td>
+<input type="text" name="address"></input>
+</td></tr>
+</div>
+<tr><td>
+<div class="button">
+<button type="update">Update</button></td></tr>
+</table>
+</div>
+
+</form>
+
+<div>
+Delete a client:
+<table align="center"><tr><td>
+<form action="/delete" method = "post" align="center"></td><td>
+<input type ="hidden" name ="_method" value="DELETE"><td></tr>
+<div>
+<tr><td>
+<label for="client">client:</label></td><td>
+<input type="text" name="title"></input><td></tr>
+</div>
+<div><tr><td>
+<button type="delete">Delete</button></td></tr>
+</table>
+</div>
+</form>
+
+</head>
+</html>
